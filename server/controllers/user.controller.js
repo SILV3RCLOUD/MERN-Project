@@ -47,7 +47,7 @@ const createUser = async (req, res) => {
 // }; 
 
 export {
-  getAllUsers,
+  //getAllUsers,
   createUser,
-  getUserInfoByID,
+  //getUserInfoByID,
 }
