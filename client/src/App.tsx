@@ -58,7 +58,7 @@ function App() {
 
       // Save user to MongoDB...
       if (profileObj) {
-        const response = await fetch('https://mern-project-server.onrender.com/api/v1/users',{
+        const response = await fetch('https://silv3rcloud-expert-space-engine-jjg59v6jp753575g-8080.preview.app.github.dev/api/v1/users',{
           method: 'POST',
           headers: { 'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -67,8 +67,6 @@ function App() {
             avatar: profileObj.picture,
           })
         })  
-
-        console.log(response)
 
         const data = await response.json();
 
