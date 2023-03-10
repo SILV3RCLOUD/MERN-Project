@@ -37,7 +37,9 @@ import {
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
 
+const apiUrl = "https://silv3rcloud-expert-space-engine-jjg59v6jp753575g-8080.preview.app.github.dev/api/v1"
 const axiosInstance = axios.create();
+
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
   const token = localStorage.getItem("token");
   if (request.headers) {
@@ -58,7 +60,7 @@ function App() {
 
       // Save user to MongoDB...
       if (profileObj) {
-        const response = await fetch('https://silv3rcloud-expert-space-engine-jjg59v6jp753575g-8080.preview.app.github.dev/api/v1/users',{
+        const response = await fetch( apiUrl + '/users',{
           method: 'POST',
           headers: { 'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -82,8 +84,6 @@ function App() {
         } else {
           return Promise.reject()
         }
-
-      
       }
 
       localStorage.setItem("token", `${credential}`);
@@ -129,7 +129,7 @@ function App() {
       <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
       <RefineSnackbarProvider>
         <Refine
-          dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+          dataProvider={dataProvider(apiUrl)}
           notificationProvider={notificationProvider}
           ReadyPage={ReadyPage}
           catchAll={<ErrorComponent />}
