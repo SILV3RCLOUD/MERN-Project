@@ -37,7 +37,7 @@ import {
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
 
-const apiUrl = "https://silv3rcloud-expert-space-engine-jjg59v6jp753575g-8080.preview.app.github.dev/api/v1"
+const apiUrl = "https://mern-project-server.onrender.com/api/v1"
 const axiosInstance = axios.create();
 
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
